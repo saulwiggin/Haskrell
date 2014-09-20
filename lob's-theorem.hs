@@ -14,7 +14,7 @@ rule1 = undefined :: Theorem a -> Theorem (Provable a)
 rule2 = undefined :: Theorem (Provable a -> Provable (Provable a))
 rule3 = undefined :: Theorem (Provable (a -> b) -> Provable a -> Provable b)
 
-data Provable
+data P
 
 premise = undefined :: Theorem (Provable P -> P)
 
@@ -25,7 +25,7 @@ psi2 = undefined :: Theorem ((Provable Psi -> P) -> Psi)
 
 -- Proof
 
-step3 :: Theorem (Psi -> Provable Psi -> P))
+step3 :: Theorem (Psi -> Provable Psi -> P)
 step3 = psi1
 
 step4 :: Theorem (Provable (Psi -> Provable Psi -> P))
@@ -40,7 +40,7 @@ step6 = rule3
 step7 :: Theorem (Provable (Provable Psi -> P) -> Provable (Provable Psi) -> Provable P)
 step7 = rule3
 
-step8 :: Theorem (Provable (Psi -> Provable (Provable Psi))
+step8 :: Theorem (Provable Psi -> Provable (Provable Psi))
 step8 = rule2
 
 step9 :: Theorem (Provable Psi -> Provable P)
